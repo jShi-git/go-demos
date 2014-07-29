@@ -42,5 +42,12 @@ func main() {
 	re, _ = regexp.Compile("\\s{2,}")
 	src = re.ReplaceAllString(src, "\n")
 
+	teststr := `D:\APMServ5.2.6\www\htdocs\down\tpls`
+
+	re, _ = regexp.Compile("\\[\\/]")
+	teststr = re.ReplaceAllString(teststr, "\\\\")
+
+	fmt.Println(teststr)
+
 	fmt.Println(strings.TrimSpace(src))
 }
